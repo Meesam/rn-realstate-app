@@ -8,14 +8,14 @@ export default function Home() {
       <View className="flex-1 px-4">
         <Image
           source={require("../assets/images/onboarding.png")}
-          className="object-fitr w-full h-full"
+          className="object-cover w-full h-full"
         />
 
         <Link
           href="/login"
           className="px-4 py-3 bg-blue-500 rounded-full absolute bottom-10 left-10 right-10"
         >
-          <Text className="text-white text-center text-lg">Login</Text>
+          <Text className="text-white text-center text-lg">Get Started</Text>
         </Link>
       </View>
     </SafeAreaView>
