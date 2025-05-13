@@ -4,8 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
   return (
-    <SafeAreaView className="flex-1 bg-white">
-      <View className="flex-1 px-4">
+    <SafeAreaView className=" bg-white h-full">
+      <View className="h-full">
         <Image
           source={require("../assets/images/onboarding.png")}
           className="object-cover w-full h-full"

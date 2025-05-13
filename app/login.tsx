@@ -8,7 +8,8 @@ const Login = () => {
     <View className="flex-1 items-center justify-center bg-white px-4 py-3 ">
       <Image
         source={require("../assets/images/splash.png")}
-        className="object-contain w-[200px] h-1/2"
+        className="w-full h-1/2"
+        resizeMode="contain"
       />
       <View className="w-full ">
         <TextInput
@@ -23,9 +24,10 @@ const Login = () => {
         <Link href="/forgetPassword" className="text-center mb-4">
           Forget Password?
         </Link>
-        <TouchableOpacity className="bg-blue-500 rounded-lg p-3">
+        <Link href="/(root)/(tabs)/" className="bg-blue-500 rounded-lg p-3">
           <Text className="text-white text-center text-xl">Login</Text>
-        </TouchableOpacity>
+        </Link>
+
         <View className="flex-row items-center justify-center gap-2 mt-4">
           <Text>Don&apos;t have an account?</Text>
           <TouchableOpacity onPress={() => navigation.push("/register")}>

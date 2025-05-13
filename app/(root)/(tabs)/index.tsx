@@ -1,12 +1,16 @@
+import { Link } from "expo-router";
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
-const index = () => {
+const Index = () => {
   return (
-    <View>
-      <Text>index</Text>
+    <View className="flex-1 items-center justify-center bg-white">
+      <Link href="/login">Login</Link>
+      <Link href="/explore">Explore</Link>
+      <Link href="/profile">Profile</Link>
+      <Link href="/properties/1">Property</Link>
     </View>
   );
 };
 
-export default index;
+export default Index;
