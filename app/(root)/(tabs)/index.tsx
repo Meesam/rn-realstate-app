@@ -1,15 +1,23 @@
-import { Link } from "expo-router";
+import FeaturedList from "@/components/featuredList";
+import Header from "@/components/header";
+import Heading from "@/components/heading";
+import Search from "@/components/search";
 import React from "react";
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Index = () => {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Link href="/login">Login</Link>
-      <Link href="/explore">Explore</Link>
-      <Link href="/profile">Profile</Link>
-      <Link href="/properties/1">Property</Link>
-    </View>
+    <SafeAreaView className="flex-1 bg-white">
+      <View className="flex-1 bg-white p-4">
+        <Header />
+        <Search />
+        <ScrollView className="flex-1">
+          <Heading title="Featured" subTitle="See All" />
+          <FeaturedList />
+        </ScrollView>
+      </View>
+    </SafeAreaView>
   );
 };
 

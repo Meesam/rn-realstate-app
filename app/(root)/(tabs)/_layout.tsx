@@ -1,8 +1,7 @@
-import AntDesign from "@expo/vector-icons/AntDesign";
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import Fontisto from "@expo/vector-icons/Fontisto";
+import Feather from "@expo/vector-icons/Feather";
 import { Tabs } from "expo-router";
 import React from "react";
+import { Image } from "react-native";
 
 const TabLayout = () => {
   return (
@@ -11,7 +10,11 @@ const TabLayout = () => {
         name="index"
         options={{
           tabBarIcon: ({ color }) => (
-            <AntDesign name="home" size={24} color="color" />
+            <Image
+              source={require("../../../assets/icons/home.png")}
+              className="h-8 w-8"
+              resizeMode="contain"
+            />
           ),
           tabBarShowLabel: false,
         }}
@@ -20,7 +23,20 @@ const TabLayout = () => {
         name="explore"
         options={{
           tabBarIcon: ({ color }) => (
-            <Fontisto name="world-o" size={24} color="black" />
+            <Image
+              source={require("../../../assets/icons/search.png")}
+              className="h-8 w-8"
+              resizeMode="contain"
+            />
+          ),
+          tabBarShowLabel: false,
+        }}
+      />
+      <Tabs.Screen
+        name="bookmarks"
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Feather name="bookmark" size={24} color="gray" />
           ),
           tabBarShowLabel: false,
         }}
@@ -29,7 +45,11 @@ const TabLayout = () => {
         name="profile"
         options={{
           tabBarIcon: ({ color }) => (
-            <FontAwesome5 name="user-circle" size={24} color="black" />
+            <Image
+              source={require("../../../assets/icons/person.png")}
+              className="h-8 w-8"
+              resizeMode="contain"
+            />
           ),
           tabBarShowLabel: false,
         }}
