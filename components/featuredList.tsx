@@ -1,6 +1,6 @@
 import { Product } from "@/types/appType";
 import React from "react";
-import { View } from "react-native";
+import { FlatList, View } from "react-native";
 import ProductCard from "./productCard";
 
 const data: Product[] = [
@@ -20,19 +20,44 @@ const data: Product[] = [
     price: "12299",
     rating: "4.5",
   },
+  {
+    id: "3",
+    title: "Modernica Apartment",
+    image: require("../assets/images/japan.png"),
+    address: "New York, US",
+    price: "12299",
+    rating: "4.5",
+  },
+  {
+    id: "4",
+    title: "Merialla Villa",
+    image: require("../assets/images/new-york.png"),
+    address: "New York, US",
+    price: "12299",
+    rating: "4.5",
+  },
+  {
+    id: "5",
+    title: "Modernica Apartment",
+    image: require("../assets/images/japan.png"),
+    address: "New York, US",
+    price: "12299",
+    rating: "4.5",
+  },
 ];
 
 const FeaturedList = () => {
   return (
     <View className="my-6">
-      {/*<FlatList
+      <FlatList
         data={data}
         renderItem={({ item }) => <ProductCard {...item} />}
         keyExtractor={(item) => item.id}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-      />*/}
-      <ProductCard {...data[0]} />
+        contentContainerClassName="gap-4"
+      />
+      {/*<ProductCard {...data[0]} />*/}
     </View>
   );
 };

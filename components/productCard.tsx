@@ -3,9 +3,6 @@ import { Product } from "@/types/appType";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
-const blurhash =
-  "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
-
 const ProductCard: React.FC<Product> = ({
   id,
   title,
@@ -32,7 +29,17 @@ const ProductCard: React.FC<Product> = ({
         />
         <Text className="font-bold text-blue-600 ml-1">3.5</Text>
       </View>
-      <View></View>
+      <View className="flex flex-col gap-1 absolute bottom-5 left-5">
+        <Text className="text-xl font-extrabold text-white">{title}</Text>
+        <Text className="text-lg text-white">{address}</Text>
+        <Text className="text-xl font-extrabold text-white">${price}</Text>
+      </View>
+      <View className="absolute bottom-7 right-5">
+        <Image
+          source={require("../assets/icons/heart.png")}
+          className="size-4"
+        />
+      </View>
     </TouchableOpacity>
   );
 };
