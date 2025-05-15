@@ -1,13 +1,13 @@
 import { Product } from "@/types/appType";
 import React from "react";
-import { FlatList, View } from "react-native";
+import { View } from "react-native";
 import ProductCard from "./productCard";
 
 const data: Product[] = [
   {
     id: "1",
     title: "Merialla Villa",
-    image: "../assets/images/new-york.png",
+    image: require("../assets/images/new-york.png"),
     address: "New York, US",
     price: "12299",
     rating: "4.5",
@@ -15,7 +15,7 @@ const data: Product[] = [
   {
     id: "2",
     title: "Modernica Apartment",
-    image: "../assets/images/japan.png",
+    image: require("../assets/images/japan.png"),
     address: "New York, US",
     price: "12299",
     rating: "4.5",
@@ -25,12 +25,14 @@ const data: Product[] = [
 const FeaturedList = () => {
   return (
     <View className="my-6">
-      <FlatList
+      {/*<FlatList
         data={data}
         renderItem={({ item }) => <ProductCard {...item} />}
         keyExtractor={(item) => item.id}
-        horizontal
-      />
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+      />*/}
+      <ProductCard {...data[0]} />
     </View>
   );
 };
